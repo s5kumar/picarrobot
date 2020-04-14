@@ -1,0 +1,11 @@
+[Unit]
+Description=Automated Vehicle Service
+
+
+[Service]
+Type=oneshot
+
+ExecStart=/home/pi/AutomatedVehicle
+
+[Install]
+WantedBy=multi-user.target

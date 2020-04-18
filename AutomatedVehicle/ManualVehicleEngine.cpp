@@ -56,7 +56,7 @@ void ManualVehicleEngine::vMoveNone()
 
 void ManualVehicleEngine::vSteerVehicle()
 {
-	int distance = m_sensor->iGetDistance();
+
 
 	/*if(distance < STOP_THRESHOLD && (m_determined_state == EN_TURNLEFT || m_determined_state == EN_TURNRIGHT || m_determined_state == EN_GOINGSTRAIGHT) ) //prevent crash
 	{

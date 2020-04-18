@@ -14,7 +14,7 @@ void* VehicleEngine::vStartEngineThread(void* vehicle_obj)
 	cout<<"Engine thread is started"<<endl;
 	while(myVehicle->bIsStart())
 	{
-		usleep(10000);
+		usleep(100000);
 		myVehicle->vSteerVehicle();
 
 	}
@@ -278,7 +278,7 @@ bool VehicleEngine::bIsStart()
 
 void VehicleEngine::vSteerVehicle()
 {
-
+	cout<<"The state the vehicle is asked to move is "<<m_determined_state<<endl;
 
 	if(m_determined_state != m_current_state)
 	{
@@ -293,7 +293,7 @@ void VehicleEngine::vSteerVehicle()
 			m_prevtime = curtime;
 			record_data mydata = {ElapsedTime,m_current_state};
 			m_record_step.push_back(mydata);
-			cout<<"Pushed data is "<<mydata.step<<" "<<mydata.vehiclestate<<endl;
+
 		}
 		m_current_state = m_determined_state;
 		switch(m_current_state)

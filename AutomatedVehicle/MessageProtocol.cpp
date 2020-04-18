@@ -29,7 +29,7 @@ int MessageProtocol::vProcessMessage(char* msg_buffer)
 {
 	int msg_id = atoi(&msg_buffer[0]); //first message indicates the msg_id
 
-	cout<<"Received message from client"<<msg_id<<endl;
+	cout<<"Received message: "<<msg_id<<endl;
 	switch(msg_id){
 		case EN_ACTIVATE_AUTO: //automated or vehicle
 			if(!isAutomated && !isPlayMode)

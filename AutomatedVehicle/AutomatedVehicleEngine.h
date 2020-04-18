@@ -11,6 +11,7 @@
 
 
 #define MAX_TRIES_BEFORE_STUCK 3
+#define MIN_ERROR_VALUE 3
 
 class AutomatedVehicleEngine: public VehicleEngine {
 public:
@@ -22,7 +23,10 @@ public:
 private:
 	int m_Measured_distance;
 
-	int m_Num_tries;
+	int m_recoverylogic;
+
+	int m_tries;
+
 };
 
 #endif /* AUTOMATEDVEHICLEENGINE_H_ */

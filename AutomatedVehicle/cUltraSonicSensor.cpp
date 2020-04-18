@@ -20,7 +20,7 @@ void* cUltraSonicSensor::vStartUltrasonicThread(void* uss)
 	while(us->m_bSensorRead)
 	{
 		us->vSetupTriggerAndEcho();
-		usleep(10000);
+		usleep(100000);
 
 	}
 	return NULL;
@@ -70,10 +70,9 @@ void cUltraSonicSensor::vSetupTriggerAndEcho()
 	long int ElapsedTime = msstop-msstart;
 
 	float m_dist = (ElapsedTime * 34300) /2;
-	if(m_dist > 0) //ignoring incorrect values
+	if(m_dist >= 0) //ignoring incorrect values
 		m_distance = m_dist/1000000;
 
-	//cout<<"My current distance is "<<m_distance<<endl;
 }
 
 int cUltraSonicSensor::iGetDistance()

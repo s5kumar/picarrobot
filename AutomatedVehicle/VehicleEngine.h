@@ -19,8 +19,8 @@
 #include "cGPIOHandler.h"
 #include "cUltraSonicSensor.h"
 
-#define TURN_THRESHOLD 60
-#define STOP_THRESHOLD 30
+#define TURN_THRESHOLD 100
+#define STOP_THRESHOLD 50
 using namespace std;
 class VehicleEngine {
 public:
